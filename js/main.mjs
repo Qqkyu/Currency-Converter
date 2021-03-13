@@ -1,12 +1,18 @@
+import { convertSend, convertReceived } from "./conversion.mjs";
 import setFetchedExchangeRate from "./exchange-rates.mjs";
-import normalizeInput from "./input.mjs";
 
 M.AutoInit();
 
-function disableInput() {
-    document.getElementById("send-input").disabled = true;
-    document.getElementById("received-input").disabled = true;
-}
+window.addEventListener("DOMContentLoaded", function () {
+    setFetchedExchangeRate("GBP");
+    displayExchangeRate("GBP");
+});
+
+document.getElementById("send-input").addEventListener("blur", convertSend);
+
+document
+    .getElementById("received-input")
+    .addEventListener("blur", convertReceived);
 
 function displayExchangeRate(currencyCode) {
     var exRate = sessionStorage.getItem(`${currencyCode}-ExRate`);
@@ -32,12 +38,7 @@ function displayExchangeRate(currencyCode) {
         .classList.add("scale-in");
 }
 
-window.addEventListener("DOMContentLoaded", function () {
-    setFetchedExchangeRate("GBP");
-    displayExchangeRate("GBP");
-});
-
-document.getElementById("send-input").addEventListener("blur", normalizeInput);
-document
-    .getElementById("received-input")
-    .addEventListener("blur", normalizeInput);
+function disableInput() {
+    document.getElementById("send-input").disabled = true;
+    document.getElementById("received-input").disabled = true;
+}
