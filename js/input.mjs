@@ -1,13 +1,15 @@
 export default function normalizeInput() {
     const sendInput = document.getElementById("send-input");
-    const sendVal = sendInput.value;
+    var sendVal = sendInput.value;
     if (sendVal != "") {
-        sendInput.value = parseFloat(sendVal).toFixed(2);
+        sendVal = parseFloat(sendVal);
+        sendInput.value = sendVal < 0 ? "" : sendVal.toFixed(2);
     }
 
     const recvInput = document.getElementById("received-input");
-    const recvVal = recvInput.value;
+    var recvVal = recvInput.value;
     if (recvVal != "") {
-        recvInput.value = toString(parseInt(recvVal).toFixed(2));
+        recvVal = parseFloat(recvVal);
+        recvInput.value = recvVal < 0 ? "" : recvVal.toFixed(2);
     }
 }
