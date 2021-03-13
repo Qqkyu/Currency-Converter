@@ -1,0 +1,95 @@
+html,
+body {
+    height: 100%;
+    width: 100%;
+    min-width: 320px;
+}
+
+body {
+    background: linear-gradient(
+            to bottom,
+            rgba(255, 255, 255, 0.15) 0%,
+            rgba(0, 0, 0, 0.15) 100%
+        ),
+        radial-gradient(
+                at top center,
+                rgba(255, 255, 255, 0.4) 0%,
+                rgba(0, 0, 0, 0.4) 120%
+            )
+            #989898;
+    background-blend-mode: multiply, multiply;
+}
+
+#title {
+    text-align: center;
+    font-family: "Lato", sans-serif;
+    font-weight: bold;
+    color: #fff;
+}
+
+.converter-transbox {
+    max-width: 550px;
+    background-color: #000000;
+    color: #fff;
+    opacity: 0.3;
+}
+
+.converter-transbox label {
+    color: #fff;
+}
+
+.converter-transbox input {
+    color: #fff;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield; /* Firefox */
+}
+
+.input-field {
+    margin: 30px 0 30px 0;
+}
+
+.input-field input {
+    box-sizing: border-box !important;
+    padding-right: 100px !important;
+    background-position: right top;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.input-field .postfix ~ input {
+    width: 80%;
+    width: calc(100% - 6rem);
+    margin-right: 3rem !important;
+}
+
+.input-field .postfix {
+    position: absolute;
+    width: 3rem;
+    line-height: 50px;
+    -webkit-transition: color 0.2s;
+    transition: color 0.2s;
+    right: 0;
+}
+.input-field .postfix.active {
+    color: #26a69a;
+}
+
+#send-input {
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/f/f2/Flag_of_Great_Britain_%281707%E2%80%931800%29.svg");
+}
+
+#received-input {
+    background-image: url("https://upload.wikimedia.org/wikipedia/en/thumb/1/12/Flag_of_Poland.svg/125px-Flag_of_Poland.svg.png");
+}
+
+.ex-rate-info {
+    text-align: center;
+}

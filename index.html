@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Lato:ital@1&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/icon?family=Material+Icons"
+            rel="stylesheet"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+        />
+        <link rel="stylesheet" href="./css/style.css" />
+
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <title>Currency converter</title>
+    </head>
+    <body class="valign-wrapper">
+        <div class="row">
+            <header id="title">
+                <h1>Currency converter</h1>
+            </header>
+
+            <div class="col s12 converter-transbox">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">arrow_upward</i>
+                    <i class="postfix">GBP</i>
+                    <input id="send-input" type="number" />
+                    <label for="send-input">You send</label>
+                </div>
+
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">arrow_downward</i>
+                    <i class="postfix">PLN</i>
+                    <input id="received-input" type="number" />
+                    <label for="received-input">They receive</label>
+                </div>
+
+                <div
+                    class="ex-rate-info col s12 scale-transition scale-out"
+                    id="exchange-rate-info-cont"
+                >
+                    <p id="exchange-rate-info"></p>
+                    <p><strong>No transfer fee</strong></p>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <script type="module" src="./js/main.mjs"></script>
+    </body>
+</html>
