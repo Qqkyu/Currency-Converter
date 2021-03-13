@@ -1,4 +1,5 @@
 import setFetchedExchangeRate from "./exchange-rates.mjs";
+import normalizeInput from "./input.mjs";
 
 M.AutoInit();
 
@@ -35,3 +36,8 @@ window.addEventListener("DOMContentLoaded", function () {
     setFetchedExchangeRate("GBP");
     displayExchangeRate("GBP");
 });
+
+document.getElementById("send-input").addEventListener("blur", normalizeInput);
+document
+    .getElementById("received-input")
+    .addEventListener("blur", normalizeInput);
