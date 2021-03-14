@@ -5,7 +5,7 @@ import { disableInput } from "./input-fields.mjs";
  * accepted 3 letter acronym;
  * Fetches current exchange rate for specified currency from NBP API;
  * In case of a successful API call, the fetched exchange rate is saved in
- * a session storage using naming convention: <currency code>-ExRate;
+ * a session storage using naming convention: <currency code>-ExRate
  */
 export function setFetchedExchangeRate(currencyCode) {
     const URL = `http://api.nbp.pl/api/exchangerates/rates/a/${currencyCode}/?format=json`;
@@ -30,7 +30,7 @@ export function setFetchedExchangeRate(currencyCode) {
  * accepted 3 letter acronym;
  * Checks whether <currencyCode>-ExRate is set in sessionStorage, if so
  * information about exchange rate is displayed, otherwise use toast to
- * inform user about failure;
+ * inform user about failure
  */
 export function displayExchangeRate(currencyCode) {
     var exRate = sessionStorage.getItem(`${currencyCode}-ExRate`);

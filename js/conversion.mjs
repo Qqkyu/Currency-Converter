@@ -3,7 +3,7 @@
  * which is an internationally accepted 3 letter acronym and sendAmount;
  * If exchange rate is set for passed-in currency in sessionStorage and
  * passed-in sendAmount is not an empty string, then returns calculated
- * received amount, otherwise an empty string.
+ * received amount, otherwise an empty string
  */
 export function convertSend({
     currencyCode = "GBP",
@@ -24,7 +24,7 @@ export function convertSend({
  * which is an internationally accepted 3 letter acronym and recvAmount;
  * If exchange rate is set for passed-in currency in sessionStorage and
  * passed-in recvAmount is not an empty string, then returns calculated
- * send amount, otherwise an empty string.
+ * send amount, otherwise an empty string
  */
 export function convertReceived({
     currencyCode = "GBP",
