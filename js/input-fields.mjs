@@ -15,7 +15,7 @@ export function updateSend() {
     normalizeFields();
 
     // Check whether normalized input is an empty string
-    if (document.getElementById("send-input").value == "") {
+    if (recvAmount != "" && document.getElementById("send-input").value == "") {
         M.toast({
             html: "Invalid received amount",
             classes: "rounded",
@@ -41,7 +41,10 @@ export function updateReceived() {
     normalizeFields();
 
     // Check whether normalized input is an empty string
-    if (document.getElementById("received-input").value == "") {
+    if (
+        sendAmount != "" &&
+        document.getElementById("received-input").value == ""
+    ) {
         M.toast({
             html: "Invalid send amount",
             classes: "rounded",
