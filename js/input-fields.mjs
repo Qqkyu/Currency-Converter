@@ -1,25 +1,6 @@
 import { convertReceived, convertSend } from "./conversion.mjs";
 
 /*
- * Check for negative values and optionally trim number to 2 decimal places
- */
-export function normalizeFields() {
-    const sendInput = document.getElementById("send-input");
-    var sendVal = sendInput.value;
-    if (sendVal != "") {
-        sendVal = parseFloat(sendVal);
-        sendInput.value = sendVal < 0 ? "" : sendVal.toFixed(2);
-    }
-
-    const recvInput = document.getElementById("received-input");
-    var recvVal = recvInput.value;
-    if (recvVal != "") {
-        recvVal = parseFloat(recvVal);
-        recvInput.value = recvVal < 0 ? "" : recvVal.toFixed(2);
-    }
-}
-
-/*
  * Get received amount, convert it and display resul in send input;
  * Send information through toast in case of invalid input
  */
@@ -72,4 +53,23 @@ export function updateReceived() {
 export function disableInput() {
     document.getElementById("send-input").disabled = true;
     document.getElementById("received-input").disabled = true;
+}
+
+/*
+ * Check for negative values and optionally trim number to 2 decimal places
+ */
+function normalizeFields() {
+    const sendInput = document.getElementById("send-input");
+    var sendVal = sendInput.value;
+    if (sendVal != "") {
+        sendVal = parseFloat(sendVal);
+        sendInput.value = sendVal < 0 ? "" : sendVal.toFixed(2);
+    }
+
+    const recvInput = document.getElementById("received-input");
+    var recvVal = recvInput.value;
+    if (recvVal != "") {
+        recvVal = parseFloat(recvVal);
+        recvInput.value = recvVal < 0 ? "" : recvVal.toFixed(2);
+    }
 }

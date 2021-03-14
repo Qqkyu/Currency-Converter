@@ -1,15 +1,11 @@
-import {
-    setFetchedExchangeRate,
-    displayExchangeRate,
-} from "./exchange-rates.mjs";
+import { setFetchedExchangeRate } from "./exchange-rates.mjs";
 import { updateReceived, updateSend } from "./input-fields.mjs";
 
 // Initialize all of the Materialize Components
 M.AutoInit();
 
-window.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
     setFetchedExchangeRate("GBP");
-    displayExchangeRate("GBP");
 });
 
 document.getElementById("send-input").addEventListener("blur", updateReceived);
