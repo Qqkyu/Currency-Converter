@@ -8,7 +8,7 @@ import { disableInput } from "./input-fields.mjs";
  * a session storage using naming convention: <currency code>-ExRate
  */
 export function setFetchedExchangeRate(currencyCode) {
-    const URL = `http://api.nbp.pl/api/exchangerates/rates/a/${currencyCode}/?format=json`;
+    const URL = `https://api.nbp.pl/api/exchangerates/rates/a/${currencyCode}/?format=json`;
 
     fetch(URL)
         .then((response) => response.json())
