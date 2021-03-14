@@ -32,7 +32,7 @@ export function convertReceived({
 }) {
     var exRate = sessionStorage.getItem(`${currencyCode}-ExRate`);
     if (exRate != null && recvAmount != "") {
-        const sendAmount = parseFloat(recvAmount) * parseFloat(exRate);
+        const sendAmount = parseFloat(recvAmount) / parseFloat(exRate);
         return sendAmount.toString();
     } else {
         return "";
