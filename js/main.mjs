@@ -8,5 +8,9 @@ document.addEventListener("DOMContentLoaded", () => {
     setFetchedExchangeRate("GBP");
 });
 
-document.getElementById("send-input").addEventListener("blur", updateReceived);
-document.getElementById("received-input").addEventListener("blur", updateSend);
+document
+    .getElementById("send-input")
+    .addEventListener("change", updateReceived);
+document
+    .getElementById("received-input")
+    .addEventListener("change", updateSend);

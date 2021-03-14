@@ -2,7 +2,7 @@ import { convertReceived, convertSend } from "./conversion.mjs";
 
 /*
  * Get received amount, convert it and display resul in send input;
- * Send information through toast in case of invalid input
+ * Send information through toast in case of negative input
  */
 export function updateSend() {
     var recvAmount = document.getElementById("received-input").value;
@@ -12,22 +12,23 @@ export function updateSend() {
     });
 
     document.getElementById("send-input").value = sendAmount;
-    // Reinitialize all the Materialize labels
-    M.updateTextFields();
+    normalizeFields();
 
-    if (sendAmount != "") {
-        normalizeFields();
-    } else {
+    // Check whether normalized input is an empty string
+    if (document.getElementById("send-input").value == "") {
         M.toast({
             html: "Invalid received amount",
             classes: "rounded",
         });
     }
+
+    // Reinitialize all the Materialize labels
+    M.updateTextFields();
 }
 
 /*
- * Get send amount, convert it and display resul in received input;
- * Send information through toast in case of invalid input.
+ * Get send amount, convert it and display result in received input;
+ * Send information through toast in case of negative input.
  */
 export function updateReceived() {
     var sendAmount = document.getElementById("send-input").value;
@@ -37,17 +38,18 @@ export function updateReceived() {
     });
 
     document.getElementById("received-input").value = recvAmount;
-    // Reinitialize all the Materialize labels
-    M.updateTextFields();
+    normalizeFields();
 
-    if (recvAmount != "") {
-        normalizeFields();
-    } else {
+    // Check whether normalized input is an empty string
+    if (document.getElementById("received-input").value == "") {
         M.toast({
             html: "Invalid send amount",
             classes: "rounded",
         });
     }
+
+    // Reinitialize all the Materialize labels
+    M.updateTextFields();
 }
 
 export function disableInput() {
